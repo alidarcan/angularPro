@@ -25,6 +25,12 @@
                 Click Me
             </ng-template>
         </button>
+        <div>
+            <input type="range" [(ngModel)]="fontSize">
+            <input type="number" [(ngModel)]="fontSize">
+            <p [ngStyle]="{'color': colorPicked, 'font-size.px': fontSize}">This is dynamically styled content</p>
+            <input type="color" [(ngModel)]="colorPicked">
+        </div>
         <ul>
             <li *ngFor="let item of items">{{item}}</li>
         </ul>
