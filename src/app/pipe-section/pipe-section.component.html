@@ -1,0 +1,59 @@
+<div id="pipes" class="px-5 bg-light rounded-3">
+    <div class="container py-5">
+        <h1 class="display-5 fw-bold">Pipes Testing</h1>
+        <p class="col-md-8 fs-4">
+            Testing Pipes Here.
+        </p>
+        <h2 class="fw-bold">Content Testing</h2>
+        <div>
+            <div class="mb-3">
+                <label for="content" class="form-label">Change the text</label>
+                <input type="text" class="form-control" name="content" id="content" placeholder="Write Something"
+                    [(ngModel)]="value" />
+            </div>
+
+            <p>Value is {{value}}</p>
+            <p>Title Case Value is {{ value | titlecase }}</p>
+            <p>UPPERCASE Value is {{value | uppercase}}</p>
+            <p>lowercase Value is {{value | lowercase}}</p>
+
+            <div class="row">
+                <h2 class="fw-bold">Date Testing</h2>
+
+                <div class="mb-3 col-2">
+                    <label for="date" class="form-label">Date</label>
+                    <input type="datetime-local" class="form-control" name="date" id="date" aria-describedby="helpId"
+                        placeholder="Date" [(ngModel)]="currentDate" />
+                    <small id="helpId" class="form-text text-muted">Change the Date</small>
+                </div>
+
+                <div class="col-10">
+                    <!-- <p>Today's date is {{currentDate | date:"EEEE YYYY-MM-dd HH:mm:ss.SSS OOOO"}}</p> -->
+                    <p>Today's date is {{currentDate | date}}</p>
+                    <p>Today's date is {{currentDate | date:"EEEE dd-MM-YYYY HH:mm OOOO"}}</p>
+                    <p>Full date is {{ currentDate | date:"fullDate" }}</p>
+                    <p>Long date is {{ currentDate | date:"longDate" }}</p>
+                    <p>Short date is {{ currentDate | date:"shortDate" }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <h2 class="fw-bold">Currency Testing</h2>
+
+                <div class="mb-3 col-2">
+                    <input type="number" step=".01" class="form-control" aria-describedby="helpId"
+                        placeholder="Amount" [(ngModel)]="amount" />
+                    <small id="helpId" class="form-text text-muted">Change the Amount</small>
+                </div>
+
+                <div class="col-10">
+                   <p>Price is {{ amount  | currency:'USD' }}</p>
+                   <p>Price is {{ amount  | currency:'EUR' }}</p>
+                   <p>Price is {{ amount  | currency:'GBP':true }}</p>
+                   <p>Price is {{ amount  | currency:'GBP':false }}</p>
+                   <p>Price is {{ amount  | currency:"TRY":"TL":'0.3'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

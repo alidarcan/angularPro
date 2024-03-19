@@ -1,10 +1,8 @@
-<div class="p-5 mb-4 bg-light rounded-3">
-    <div class="container-fluid py-5">
-        <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+<div id="directives" class="px-5 border-bottom bg-light rounded-3">
+    <div class="container py-5">
+        <h1 class="display-5 fw-bold">Directives Testing</h1>
         <p class="col-md-8 fs-4">
-            Using a series of utilities, you can create this jumbotron, just
-            like the one in previous versions of Bootstrap. Check out the
-            examples below for how you can remix and restyle it to your liking.
+            There are some components for you to try down below.
         </p>
         <div class="mb-3">
             <ng-container *ngIf="key.length>0; else notPressed">
@@ -25,14 +23,20 @@
                 Click Me
             </ng-template>
         </button>
-        <div>
-            <input type="range" [(ngModel)]="fontSize">
-            <input type="number" [(ngModel)]="fontSize">
-            <p [ngStyle]="{'color': colorPicked, 'font-size.px': fontSize}">This is dynamically styled content</p>
-            <input type="color" [(ngModel)]="colorPicked">
-        </div>
         <ul>
             <li *ngFor="let item of items">{{item}}</li>
         </ul>
+        <div>
+            <div class="row">
+                <div class="col-2 mt-5">
+                    <input class="form-control" type="range" [(ngModel)]="fontSize">
+                    <input class="form-control" type="number" [(ngModel)]="fontSize">
+                    <input class="form-control" type="color" [(ngModel)]="colorPicked">
+                </div>
+                <div class="col-10 my-auto p-2">
+                    <p class="my-auto" [ngStyle]="{'color': colorPicked, 'font-size.px': fontSize}">Change the color and font size dynamically of this content.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
