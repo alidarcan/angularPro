@@ -6,9 +6,14 @@
             like the one in previous versions of Bootstrap. Check out the
             examples below for how you can remix and restyle it to your liking.
         </p>
-        <button class="btn btn-primary btn-lg" type="button">
-            Example button
+        <button type="button" class="btn btn-primary btn-lg" (click)="onClick()">
+            <ng-container *ngIf="counter > 0 ; else elseTemplate">
+                Clicked {{counter}} times
+            </ng-container>
+            <ng-template #elseTemplate>
+                Click Me
+            </ng-template>
         </button>
+        <li *ngFor="let item of items">{{item}}</li>
     </div>
 </div>
-
