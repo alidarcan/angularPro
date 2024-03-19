@@ -6,14 +6,27 @@
             like the one in previous versions of Bootstrap. Check out the
             examples below for how you can remix and restyle it to your liking.
         </p>
+        <div class="mb-3">
+            <ng-container *ngIf="key.length>0; else notPressed">
+                <label for="key" class="form-label">You pressed {{key}}.</label>
+            </ng-container>
+            <ng-template #notPressed>
+                <label for="key" class="form-label">Press a Key</label>
+            </ng-template>
+            <input autofocus (keyup)="onKeyPress($event)" type="text" class="form-control" name="key" id="key"
+                placeholder="Press a Key" />
+        </div>
+
         <button type="button" class="btn btn-primary btn-lg" (click)="onClick()">
-            <ng-container *ngIf="counter > 0 ; else elseTemplate">
+            <ng-container *ngIf="counter > 0 ; else notClicked">
                 Clicked {{counter}} times
             </ng-container>
-            <ng-template #elseTemplate>
+            <ng-template #notClicked>
                 Click Me
             </ng-template>
         </button>
-        <li *ngFor="let item of items">{{item}}</li>
+        <ul>
+            <li *ngFor="let item of items">{{item}}</li>
+        </ul>
     </div>
 </div>

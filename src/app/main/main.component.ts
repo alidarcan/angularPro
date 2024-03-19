@@ -15,4 +15,9 @@ export class MainComponent {
     this.counter++;
     console.log('clicked', this.counter, 'times');
   }
+  key: string = '';
+  onKeyPress(event: any) {
+    console.log(event.key);
+    this.key = event.key;
+  }
 }
