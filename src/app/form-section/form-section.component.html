@@ -1,0 +1,16 @@
+<div id="forms" class="px-5 bg-light rounded-3">
+    <div class="container py-5">
+        <h1 class="display-5 fw-bold">Forms Testing</h1>
+        <p class="col-md-8 fs-4">
+            Testing Forms Here.
+        </p>
+        <h2 class="fw-bold">Reactive Form</h2>
+        <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+            <label for="name">Name: </label>
+            <input formControlName="name" type="text" name="name" id="name" required>
+            <label for="email">Email: </label>
+            <input formControlName="email" type="email" name="email" id="email" required>
+            <button type="submit" [disabled]="!myForm.valid">Submit</button>
+        </form>
+    </div>
+</div>

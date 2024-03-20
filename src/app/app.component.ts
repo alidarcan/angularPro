@@ -6,6 +6,7 @@ import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { FooterComponent } from './footer/footer.component';
 import { PipeSectionComponent } from './pipe-section/pipe-section.component';
+import { FormSectionComponent } from './form-section/form-section.component';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,8 @@ import { PipeSectionComponent } from './pipe-section/pipe-section.component';
     HeaderComponent,
     MainComponent,
     FooterComponent,
-    PipeSectionComponent
+    PipeSectionComponent,
+    FormSectionComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
