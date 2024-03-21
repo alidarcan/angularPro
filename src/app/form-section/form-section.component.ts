@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-form-section',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, FormsModule],
   templateUrl: './form-section.component.html',
   styleUrl: './form-section.component.css',
 })
@@ -21,5 +21,9 @@ export class FormSectionComponent implements OnInit {
   submitForm(){
     console.log("Form Submitted");
     
+  }
+  value:string = "";
+  onEnter(item:string){
+    this.value = item;
   }
 }

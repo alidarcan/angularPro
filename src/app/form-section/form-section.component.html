@@ -7,10 +7,17 @@
         <h2 class="fw-bold">Reactive Form</h2>
         <form [formGroup]="myForm" (ngSubmit)="submitForm()">
             <label for="name">Name: </label>
-            <input formControlName="name" type="text" name="name" id="name" required>
+            <input formControlName="name" type="text" name="name" id="name" required placeholder="*Required for Button">
             <label for="email">Email: </label>
-            <input formControlName="email" type="email" name="email" id="email" required>
+            <input formControlName="email" type="email" name="email" id="email" required
+                placeholder="*Required for Button">
             <button type="submit" [disabled]="!myForm.valid">Submit</button>
+
+            <label for="test">Name: </label>
         </form>
+        <h2 class="fw-bold mt-2">Input Testing</h2>
+        <input #test class="mt-2" type="text" name="test" id="test" (keyup.enter)="onEnter(test.value)"
+            placeholder="Text here and press Enter">
+        <p>{{value}}</p>
     </div>
 </div>
